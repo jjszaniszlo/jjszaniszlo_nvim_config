@@ -1,2 +1,2 @@
-# jjszaniszlo_nvim_config
+# jjszaniszlo NeoVim config
 NeoVim configuration
