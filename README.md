@@ -1,2 +1,1 @@
-# jjszaniszlo NeoVim config
-NeoVim configuration
+NeoVim config
