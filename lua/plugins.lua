@@ -21,7 +21,13 @@ require 'packer'.startup(function()
   }
   use 'andweeb/presence.nvim'
   use 'tikhomirov/vim-glsl'
-
+  use {
+		'lewis6991/gitsigns.nvim',
+		requires = {
+			'nvim-lua/plenary.nvim',
+		},
+	}
+  use 'lukas-reineke/lsp-format.nvim'
 
   -- functional
   use 'L3MON4D3/LuaSnip'
@@ -29,6 +35,21 @@ require 'packer'.startup(function()
   use 'windwp/nvim-autopairs'
   use 'norcalli/nvim-colorizer.lua'
   use 'terrortylor/nvim-comment'
+  use 'kdheepak/lazygit.nvim'
+
+  -- Telescope
+  use {
+		'nvim-telescope/telescope.nvim',
+		requires = {
+			'nvim-lua/popup.nvim',
+			'nvim-lua/plenary.nvim',
+		},
+	}
+
+	use {
+		'nvim-telescope/telescope-fzf-native.nvim',
+		run = 'make',
+	}
 
   -- treesitter
   use {

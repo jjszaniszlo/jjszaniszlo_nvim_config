@@ -6,6 +6,9 @@ keymap('n', '<s-tab>', '<cmd> BufferLineCyclePrev <cr>')
 keymap('n', 'm.', '<cmd> BufferLineMoveNext <cr>')
 keymap('n', 'm,', '<cmd> BufferLineMovePrev <cr>')
 
+-- lazy git
+keymap('n', '<Leader>gg', '<cmd> LazyGit <cr>')
+
 -- lsp bindings
 keymap('n', 'gD', vim.lsp.buf.declaration)
 keymap('n', 'gd', vim.lsp.buf.definition)
@@ -27,7 +30,7 @@ keymap('n', '<leader>dd', '<cmd> ToggleDiag <cr>')
 keymap('n', '<leader>e', '<cmd> NvimTreeToggle <cr>')
 
 -- Neoformat
-keymap('n', '<leader>p', '<cmd> NeoFormat')
+keymap('n', '<leader>p', '<cmd> NeoFormat <cr>')
 
 -- other
 keymap('n', '<leader><space>', '<cmd> noh <cr>')        -- disable highlighting
