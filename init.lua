@@ -11,6 +11,7 @@ require 'plugins.markdown-preview'
 require 'plugins.nvim-tree'
 require 'plugins.presence'
 require 'plugins.surround'
+require 'plugins.telescope'
 require 'plugins.toggleterm'
 require 'plugins.treesitter'
 

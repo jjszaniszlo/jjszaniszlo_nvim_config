@@ -1,4 +1,19 @@
 local keymap = vim.keymap.set
+keymap = vim.keymap.set
+
+-- Telescope bindings
+function _find_files()
+  local is_git = os.execute('git status &>/dev/null')
+  if is_git == 0 then
+    vim.cmd(':Telescope git_files')
+  else
+    vim.cmd(':Telescope find_files')
+  end
+end
+
+keymap('n', '<Leader>f', _find_files)
+keymap('n', '<Leader>o', '<cmd> Telescope oldfiles <cr>')
+keymap('n', '<Leader>s', '<cmd> Telescope live_grep <cr>')
 
 -- bufferline
 keymap('n', '<tab>', '<cmd> BufferLineCycleNext <cr>')
@@ -33,14 +48,14 @@ keymap('n', '<leader>e', '<cmd> NvimTreeToggle <cr>')
 keymap('n', '<leader>p', '<cmd> NeoFormat <cr>')
 
 -- other
-keymap('n', '<leader><space>', '<cmd> noh <cr>')        -- disable highlighting
+keymap('n', '<leader><space>', '<cmd> noh <cr>') -- disable highlighting
 keymap('n', '<leader>cc', '<cmd> ColorizerToggle <cr>') -- colorizer toggle
-keymap('n', '<leader>q', '<cmd> :bd <cr>')                -- close buffer
+keymap('n', '<leader>q', '<cmd> :bd <cr>') -- close buffer
 keymap('n', '<leader>n', '<cmd> enew <cr>')
 
 vim.cmd(':tnoremap <Esc><Esc> <c-\\><c-n>')
 
-vim.cmd[[
+vim.cmd [[
   nnoremap <C-J> <C-W><C-J>
   nnoremap <C-K> <C-W><C-K>
   nnoremap <C-L> <C-W><C-L>
