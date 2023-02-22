@@ -21,6 +21,9 @@ keymap('n', '<s-tab>', '<cmd> BufferLineCyclePrev <cr>')
 keymap('n', 'm.', '<cmd> BufferLineMoveNext <cr>')
 keymap('n', 'm,', '<cmd> BufferLineMovePrev <cr>')
 
+-- colorizer
+keymap('n', '<leader>cc', '<cmd> ColorizerToggle <cr>')
+
 -- lazy git
 keymap('n', '<Leader>gg', '<cmd> LazyGit <cr>')
 
@@ -29,8 +32,14 @@ keymap('n', 'gD', vim.lsp.buf.declaration)
 keymap('n', 'gd', vim.lsp.buf.definition)
 keymap('n', 'K', vim.lsp.buf.hover)
 keymap('n', 'gi', vim.lsp.buf.implementation)
+keymap("n", "<space>wa", vim.lsp.buf.add_workspace_folder)
+keymap("n", "<space>wr", vim.lsp.buf.remove_workspace_folder)
+keymap("n", "<space>wl", function()
+  print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
+end)
 keymap('n', '<space>rn', vim.lsp.buf.rename)
 keymap('n', '<space>ca', vim.lsp.buf.code_action)
+keymap("n", "<space>D", vim.lsp.buf.type_definition)
 keymap('n', 'gr', vim.lsp.buf.references)
 keymap('n', '<space>e', vim.diagnostic.open_float)
 keymap('n', '<space>q', vim.diagnostic.setloclist)
@@ -44,17 +53,16 @@ keymap('n', '<leader>dd', '<cmd> ToggleDiag <cr>')
 -- nvim tree
 keymap('n', '<leader>e', '<cmd> NvimTreeToggle <cr>')
 
--- Neoformat
-keymap('n', '<leader>p', '<cmd> NeoFormat <cr>')
-
 -- other
 keymap('n', '<leader><space>', '<cmd> noh <cr>') -- disable highlighting
 keymap('n', '<leader>cc', '<cmd> ColorizerToggle <cr>') -- colorizer toggle
 keymap('n', '<leader>q', '<cmd> :bd <cr>') -- close buffer
 keymap('n', '<leader>n', '<cmd> enew <cr>')
 
+-- terminal escape to normal
 vim.cmd(':tnoremap <Esc><Esc> <c-\\><c-n>')
 
+-- buffer movement
 vim.cmd [[
   nnoremap <C-J> <C-W><C-J>
   nnoremap <C-K> <C-W><C-K>
