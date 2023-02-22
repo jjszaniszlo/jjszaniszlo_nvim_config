@@ -1,3 +1,5 @@
+require 'bindings'
+require 'general'
 require 'plugins'
 require 'plugins.autopairs'
 require 'plugins.bufferline'
@@ -15,7 +17,3 @@ require 'plugins.surround'
 require 'plugins.telescope'
 require 'plugins.toggleterm'
 require 'plugins.treesitter'
-
-require 'general'
-require 'bindings'
-require 'commands'

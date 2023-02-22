@@ -3,7 +3,7 @@ local nvim_lsp = require 'lspconfig'
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities = require 'cmp_nvim_lsp'.default_capabilities(capabilities)
 
-local servers = { 'lua_ls', 'clangd' }
+local servers = { 'lua_ls', 'clangd', 'rust_analyzer', 'html', 'cssls', 'tsserver' }
 
 local lsp_format = require 'lsp-format'
 lsp_format.setup {}
