@@ -3,12 +3,13 @@ require 'packer'.startup(function()
   use 'wbthomason/packer.nvim'
 
   -- lsp + related
-  use 'neovim/nvim-lspconfig'
   use 'hrsh7th/cmp-nvim-lsp'
   use 'hrsh7th/cmp-buffer'
   use 'hrsh7th/cmp-path'
   use 'hrsh7th/nvim-cmp'
-  use 'williamboman/nvim-lsp-installer'
+  use 'williamboman/mason.nvim'
+  use 'williamboman/mason-lspconfig.nvim'
+  use 'neovim/nvim-lspconfig'
 
   -- aesthetic
   use 'onsails/lspkind-nvim'
@@ -22,11 +23,11 @@ require 'packer'.startup(function()
   use 'andweeb/presence.nvim'
   use 'tikhomirov/vim-glsl'
   use {
-		'lewis6991/gitsigns.nvim',
-		requires = {
-			'nvim-lua/plenary.nvim',
-		},
-	}
+    'lewis6991/gitsigns.nvim',
+    requires = {
+      'nvim-lua/plenary.nvim',
+    },
+  }
   use 'lukas-reineke/lsp-format.nvim'
 
   -- functional
@@ -39,17 +40,17 @@ require 'packer'.startup(function()
 
   -- Telescope
   use {
-		'nvim-telescope/telescope.nvim',
-		requires = {
-			'nvim-lua/popup.nvim',
-			'nvim-lua/plenary.nvim',
-		},
-	}
+    'nvim-telescope/telescope.nvim',
+    requires = {
+      'nvim-lua/popup.nvim',
+      'nvim-lua/plenary.nvim',
+    },
+  }
 
-	use {
-		'nvim-telescope/telescope-fzf-native.nvim',
-		run = 'make',
-	}
+  use {
+    'nvim-telescope/telescope-fzf-native.nvim',
+    run = 'make',
+  }
 
   -- treesitter
   use {
@@ -67,7 +68,7 @@ require 'packer'.startup(function()
     requires = 'nvim-treesitter/nvim-treesitter',
   }
 
-  use{
+  use {
     'kylechui/nvim-surround',
     tag = '*',
     config = function()
@@ -93,5 +94,4 @@ require 'packer'.startup(function()
       'markdown',
     },
   })
-
 end)

@@ -1,3 +1,8 @@
+require 'mason'.setup {}
+require 'mason-lspconfig'.setup {
+  ensure_installed = { 'lua_ls', 'clangd', 'rust_analyzer', 'html', 'cssls', 'tsserver' },
+}
+
 local nvim_lsp = require 'lspconfig'
 
 local capabilities = vim.lsp.protocol.make_client_capabilities()

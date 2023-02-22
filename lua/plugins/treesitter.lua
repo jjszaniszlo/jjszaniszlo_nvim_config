@@ -1,5 +1,5 @@
-require 'nvim-treesitter.configs' . setup {
-  ensure_installed = { 
+require 'nvim-treesitter.configs'.setup {
+  ensure_installed = {
     'c',
     'cpp',
     'lua',
@@ -111,6 +111,6 @@ require 'nvim-treesitter.configs' . setup {
         ["[d"] = "@conditional.outer",
       }
     },
-  }, 
+  },
   ignore_install = { 'javascript' },
 }
