@@ -13,6 +13,7 @@ require 'packer'.startup(function()
 
   -- aesthetic
   use 'onsails/lspkind-nvim'
+  use 'morhetz/gruvbox'
   use 'rebelot/kanagawa.nvim'
   use 'WhoIsSethDaniel/toggle-lsp-diagnostics.nvim'
   use 'sitiom/nvim-numbertoggle'
@@ -37,6 +38,7 @@ require 'packer'.startup(function()
   use 'norcalli/nvim-colorizer.lua'
   use 'terrortylor/nvim-comment'
   use 'kdheepak/lazygit.nvim'
+  use 'caenrique/swap-buffers.nvim'
 
   -- Telescope
   use {

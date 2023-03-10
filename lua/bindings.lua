@@ -100,6 +100,13 @@ keymap('n', '<leader>n', '<cmd> enew <cr>')
 -- terminal escape to normal
 vim.cmd(':tnoremap <Esc><Esc> <c-\\><c-n>')
 
+-- swap buffers
+local swapbuffers = require 'swap-buffers'
+keymap('n', '<C-S-H>', function() swapbuffers.swap_buffers 'h' end)
+keymap('n', '<C-S-J>', function() swapbuffers.swap_buffers 'j' end)
+keymap('n', '<C-S-K>', function() swapbuffers.swap_buffers 'k' end)
+keymap('n', '<C-S-l>', function() swapbuffers.swap_buffers 'l' end)
+
 -- buffer movement
 vim.cmd [[
   nnoremap <C-J> <C-W><C-J>
