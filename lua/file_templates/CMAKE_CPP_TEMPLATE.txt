@@ -1,0 +1,17 @@
+cmake_minimum_required(VERSION 3.7.0)
+
+set(CMAKE_EXPORT_COMPILE_COMMANDS true)
+set(CMAKE_CXX_STANDARD_REQUIRED 17)
+set(ROOT_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR})
+set(THIRD_PARTY ${CMAKE_CURRENT_SOURCE_DIR}/third_party)
+
+project({PROJECT_NAME})
+
+# find all source files
+file(GLOB_RECURSE {PROJECT_NAME}_SRC
+  ${CMAKE_CURRENT_SOURCE_DIR}/src/*.cpp
+  ${CMAKE_CURRENT_SOURCE_DIR}/src/*.h
+  ${CMAKE_CURRENT_SOURCE_DIR}/src/*.hpp)
+
+# add files to build
+add_executable({PROJECT_NAME} ${{PROJECT_NAME}_SRC})

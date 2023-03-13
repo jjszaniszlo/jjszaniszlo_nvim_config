@@ -1,6 +1,7 @@
 require 'bindings'
 require 'general'
 require 'plugins'
+require 'create_workspace'
 require 'plugins.autopairs'
 require 'plugins.bufferline'
 require 'plugins.colour'
